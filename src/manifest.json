@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "Bili Ads Remove",
+    "version": "1.0.0",
+    "description": "Bilibili插件，屏蔽动态广告",
+    "icons": {
+      "128": "assets/image/logo.png"
+    },
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "assets/image/logo.png"
+    },
+    "content_scripts": [
+      {
+        "js": [
+          "js/index.js"
+        ],
+        "css": [
+          "assets/style/index.css"
+        ],
+        "matches": [
+          "https://t.bilibili.com/*"
+        ],
+        "run_at":"document_start"
+      }
+    ],
+    "author": "rsndm.14k@gmail.com",
+    "permissions": [
+      "storage"
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [ "js/injected.js"],
+        "matches": ["https://t.bilibili.com/*"]
+      }
+    ]
+  }
