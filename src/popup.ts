@@ -2,11 +2,11 @@
  * @Description: 
  * @Author: 14K
  * @Date: 2023-11-13 20:52:03
- * @LastEditTime: 2023-11-13 22:13:25
+ * @LastEditTime: 2023-11-14 17:28:26
  * @LastEditors: 14K
  */
 
-import { setKeywords } from "./index"
+import { setKeywords } from "./dynamic/index"
 chrome.storage.sync.get(['keywords'], result => {
     const keywords = result.keywords || []
     renderKeywords(keywords)

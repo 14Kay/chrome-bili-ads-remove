@@ -2,9 +2,11 @@
  * @Description: 
  * @Author: 14K
  * @Date: 2023-11-13 20:27:42
- * @LastEditTime: 2023-11-13 21:43:00
+ * @LastEditTime: 2023-11-14 17:52:48
  * @LastEditors: 14K
  */
+
+
 export function setKeywords(keywords: string[]) {
     return new Promise((resolve, reject) => {
         chrome.storage.sync.set({
@@ -41,7 +43,7 @@ chrome.storage.sync.get(['keywords'], async result => {
     }
     const newestKeywords = result.keywords || defaultKeywords
     const scriptNode = document.createElement('script');
-    scriptNode.src = chrome.runtime.getURL('js/injected.js');
+    scriptNode.src = chrome.runtime.getURL('js/dynamic_injected.js');
     document.documentElement.appendChild(scriptNode);
     scriptNode.onload = function () {
         window.dispatchEvent(new CustomEvent("getLocalData", { detail: newestKeywords }));

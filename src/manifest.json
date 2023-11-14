@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Bili Ads Remove",
-    "version": "1.0.0",
-    "description": "Bilibili插件，屏蔽动态广告",
+    "name": "Bili Ads remove",
+    "version": "1.1.0",
+    "description": "Bilibili插件，屏蔽首页换一换广告、动态广告",
     "icons": {
       "128": "assets/image/logo.png"
     },
@@ -13,13 +13,25 @@
     "content_scripts": [
       {
         "js": [
+          "js/dynamic.js"
+        ],
+        "css": [
+          "assets/style/index.css"
+        ],
+        "matches": [
+          "https://t.bilibili.com/*"        ],
+        "run_at":"document_start"
+      },
+      {
+        "js": [
           "js/index.js"
         ],
         "css": [
           "assets/style/index.css"
         ],
         "matches": [
-          "https://t.bilibili.com/*"
+          "https://bilibili.com/*",       
+          "https://www.bilibili.com/*"       
         ],
         "run_at":"document_start"
       }
@@ -30,8 +42,8 @@
     ],
     "web_accessible_resources": [
       {
-        "resources": [ "js/injected.js"],
-        "matches": ["https://t.bilibili.com/*"]
+        "resources": [ "js/dynamic_injected.js", "js/index_injected.js"],
+        "matches": ["https://t.bilibili.com/*","https://bilibili.com/*","https://www.bilibili.com/*"]
       }
     ]
   }
