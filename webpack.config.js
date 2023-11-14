@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: 14K
  * @Date: 2023-11-13 20:32:44
- * @LastEditTime: 2023-11-13 20:58:12
+ * @LastEditTime: 2023-11-14 17:47:35
  * @LastEditors: 14K
  */
   const path = require("path");
@@ -28,16 +28,17 @@
   module.exports = {
     optimization: {
       minimize: true,  // 关闭代码压缩，可选
-      minimizer: [new TerserPlugin({ extractComments: false })],  // 关闭创建代码中的注释文件
+      minimizer: [new TerserPlugin({ extractComments: true })],  // 关闭创建代码中的注释文件
     },
     //入口文件
     entry: {
-      injected: "./src/injected.ts",
+      dynamic_injected: "./src/dynamic/injected.ts",
+      index_injected: "./src/index/injected.ts",
       popup: "./src/popup.ts",
-      index: "./src/index.ts",
+      dynamic: "./src/dynamic/index.ts",
+      index: "./src/index/index.ts",
     },
     devtool: "inline-source-map",
-  
     devServer: {
       contentBase: "./dist",  // 开发阶段服务器的根目录
     },
