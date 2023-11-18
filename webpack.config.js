@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: 14K
  * @Date: 2023-11-13 20:32:44
- * @LastEditTime: 2023-11-14 17:47:35
+ * @LastEditTime: 2023-11-18 15:59:55
  * @LastEditors: 14K
  */
   const path = require("path");
@@ -37,6 +37,7 @@
       popup: "./src/popup.ts",
       dynamic: "./src/dynamic/index.ts",
       index: "./src/index/index.ts",
+      index_init: "./src/index/index_init.ts",
     },
     devtool: "inline-source-map",
     devServer: {

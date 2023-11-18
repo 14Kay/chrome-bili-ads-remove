@@ -34,11 +34,22 @@
           "https://www.bilibili.com/*"       
         ],
         "run_at":"document_start"
+      },
+      {
+        "js": [
+          "js/index_init.js"
+        ],
+        "matches": [
+          "https://bilibili.com/*",       
+          "https://www.bilibili.com/*"       
+        ],
+        "run_at":"document_end"
       }
     ],
     "author": "rsndm.14k@gmail.com",
     "permissions": [
-      "storage"
+      "storage",
+      "tabs"
     ],
     "web_accessible_resources": [
       {

@@ -25,7 +25,6 @@ ul li{
     padding-right: 18px;
     overflow: hidden;
 }
-
 #keywords-container li span{
     position: absolute;
     content: "×";
@@ -70,4 +69,7 @@ ul li{
 }
 .success{
     color: #32CD32;
+}
+.err{
+    color: #d96c81;
 }
