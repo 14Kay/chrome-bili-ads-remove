@@ -2,9 +2,13 @@
  * @Description: 
  * @Author: 14K
  * @Date: 2023-11-13 20:35:50
- * @LastEditTime: 2024-01-10 18:44:23
+ * @LastEditTime: 2024-11-12 16:39:24
  * @LastEditors: 14K
  */
+import { Major } from "../types/major";
+import { Dynamic } from "../types/dynamic";
+import { Additional } from "../types/additional";
+
 let keywords: string[] = []
 window.addEventListener("getLocalData", function(event: any) {
     keywords = event.detail;
@@ -15,25 +19,25 @@ window.fetch = async function (url: any, options) {
         return originalFetch(url, options)
             .then(async (response) => {
                 if (options && options.method && options.method.toUpperCase() === 'GET') {
-
                     // 修改返回内容
                     const dynamicResponse = await response.text()
                     const dynamic = JSON.parse(dynamicResponse)
                     const dynamicLst = dynamic.data.items
                     dynamic.data.items = dynamicLst.filter((item: any) => {
-                        if(item.type == "DYNAMIC_TYPE_DRAW" || item.type == "DYNAMIC_TYPE_WORD"){
-                            if(item.modules.module_dynamic.desc){
-                                const content = item.modules.module_dynamic.desc.text || ""
-                                return !keywords.some((item) => content.includes(item))
+                        if(item.type == Dynamic.DRAW || item.type == Dynamic.WORD || item.type == Dynamic.ARTICLE){
+                            const { desc, major, additional } = item.modules.module_dynamic
+                            const content = desc?.text || "";
+                            if (content) {
+                                return !keywords.some(keyword => content.includes(keyword));
                             }
-
-                            if(item.modules.module_dynamic.additional){
+  
+                            if(additional?.type == Additional.GOODS){
                                 return false
                             }
                             
-                            if(item.modules.module_dynamic.major && item.modules.module_dynamic.major.opus){
-                                const content = item.modules.module_dynamic.major.opus.summary.text || ""
-                                return !keywords.some((item) => content.includes(item))
+                            if(major?.type == Major.OPUS){
+                                const content = major.opus?.summary?.text;
+                                return content && !keywords.some(keyword => content.includes(keyword));
                             }
                         }
                         return true

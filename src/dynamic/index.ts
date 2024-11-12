@@ -2,11 +2,9 @@
  * @Description: 
  * @Author: 14K
  * @Date: 2023-11-13 20:27:42
- * @LastEditTime: 2023-11-14 17:52:48
+ * @LastEditTime: 2024-11-12 15:38:50
  * @LastEditors: 14K
  */
-
-
 export function setKeywords(keywords: string[]) {
     return new Promise((resolve, reject) => {
         chrome.storage.sync.set({

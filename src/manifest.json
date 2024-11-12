@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Bili Ads remove",
-    "version": "1.1.0",
-    "description": "Bilibili插件，屏蔽首页换一换广告、动态广告",
+    "name": "bilibili Ads Remover",
+    "version": "1.2.0",
+    "description": "bilibili插件，屏蔽首页换一换广告、动态广告(关键词匹配)",
     "icons": {
       "128": "assets/image/logo.png"
     },
@@ -48,8 +48,7 @@
     ],
     "author": "rsndm.14k@gmail.com",
     "permissions": [
-      "storage",
-      "tabs"
+      "storage"
     ],
     "web_accessible_resources": [
       {
