@@ -2,7 +2,7 @@
  * @Description: 首页第一次进(首页默认是SSR渲染的)入时，操作DOM删除广告视频
  * @Author: 14K
  * @Date: 2023-11-18 16:21:09
- * @LastEditTime: 2024-11-12 17:12:14
+ * @LastEditTime: 2024-11-22 10:52:00
  * @LastEditors: 14K
  */
 const videoList = document.body.getElementsByClassName("feed-card")
@@ -20,7 +20,6 @@ for (var i = 0; i < videoList.length; i++) {
 }
 
 const adCardObserver = new MutationObserver(function (mutationsList) {
-    console.log("监听")
     mutationsList.forEach(mutation => {
         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
             mutation.addedNodes.forEach(node => {
