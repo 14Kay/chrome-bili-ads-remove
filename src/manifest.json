@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "bilibili Ads Remover",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "bilibili插件，屏蔽首页换一换广告、动态广告(关键词匹配)",
     "icons": {
       "128": "assets/image/logo.png"
@@ -15,9 +15,6 @@
         "js": [
           "js/dynamic.js"
         ],
-        "css": [
-          "assets/style/index.css"
-        ],
         "matches": [
           "https://t.bilibili.com/*"        ],
         "run_at":"document_start"
@@ -27,7 +24,7 @@
           "js/index.js"
         ],
         "css": [
-          "assets/style/index.css"
+          "assets/style/injected.css"
         ],
         "matches": [
           "https://bilibili.com/*",       

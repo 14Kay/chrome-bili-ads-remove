@@ -18,28 +18,3 @@ for (var i = 0; i < videoList.length; i++) {
         }
     }
 }
-
-const adCardObserver = new MutationObserver(function (mutationsList) {
-    mutationsList.forEach(mutation => {
-        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-            mutation.addedNodes.forEach(node => {
-                if (node.nodeType === Node.ELEMENT_NODE) {
-                    const element = node as HTMLElement;
-                    // 如果新增的节点或其子节点包含 class 为 adcard-content，删除该节点
-                    if (element.classList.contains('adcard-content')) {
-                        element.remove();
-                        adCardObserver.disconnect(); 
-                    } else {
-                        // 如果子节点包含目标 class，则删除
-                        const adCard = element.querySelector('.adcard-content');
-                        if (adCard) {
-                            adCard.remove();
-                            adCardObserver.disconnect(); 
-                        }
-                    }
-                }
-            });
-        }
-    });
-})
-adCardObserver.observe(document.querySelector('.bili-feed4')!, { childList: true, subtree: true, attributes: false, })
