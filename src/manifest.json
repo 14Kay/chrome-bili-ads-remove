@@ -33,6 +33,15 @@
         "run_at":"document_start"
       },
       {
+        "css": [
+          "assets/style/ads.css"
+        ],
+        "matches": [
+          "https://*.bilibili.com/*"
+        ],
+        "run_at":"document_start"
+      },
+      {
         "js": [
           "js/index_init.js"
         ],
