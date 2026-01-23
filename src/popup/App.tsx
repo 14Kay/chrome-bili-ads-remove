@@ -47,7 +47,7 @@ function App() {
                     <div className="flex flex-col gap-0.5 group">
                         <div className="flex items-baseline gap-2 cursor-default">
                             <h1 className="text-base font-bold text-gray-800 dark:text-gray-100 tracking-tight transition-colors">
-                                <span className="tracking-wide bg-gradient-to-r from-bili-pink to-bili-blue bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">bilibili</span> 动态净化
+                                <span className="tracking-wide">bilibili</span> 动态净化
                             </h1>
                         </div>
                         <p className="text-[10px] text-gray-400 dark:text-gray-500 transition-colors group-hover:text-bili-pink/70">
