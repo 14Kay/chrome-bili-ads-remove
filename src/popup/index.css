@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 字体定义 */
+@font-face {
+  font-family: 'GoogleSans';
+  src: url('../assets/fonts/GoogleSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  /* 避免字体闪烁，确保加载后显示 */
+}
+
+/* 自定义样式 */
+:root {
+  --bili-pink: #fb7299;
+  --bili-pink-hover: #e35d7f;
+  --bili-blue: #00a1d6;
+  --bili-bg: #f4f5f7;
+  --bili-bg-dark: #1f2023;
+  --bili-card-dark: #2a2b2e;
+}
+
+@theme {
+  --font-sans: 'GoogleSans';
+
+  --color-bili-pink: var(--bili-pink);
+  --color-bili-pink-hover: var(--bili-pink-hover);
+  --color-bili-blue: var(--bili-blue);
+  --color-bili-bg: var(--bili-bg);
+  --color-bili-bg-dark: var(--bili-bg-dark);
+  --color-bili-card-dark: var(--bili-card-dark);
+  --animate-fade-in: fadeIn 0.3s ease-in-out;
+  --animate-slide-up: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.25s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.25s ease-out;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e5e9ef;
+  border-radius: 3px;
+}
+
+:root.dark ::-webkit-scrollbar-thumb {
+  background: #444;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ccd0d7;
+}
+
+:root.dark ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* 强制全局应用字体 */
+* {
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--bili-bg);
+  transition: background-color 0.3s;
+}
+
+:root.dark body {
+  background-color: var(--bili-bg-dark);
+  color: #e5e9ef;
+}
