@@ -35,7 +35,7 @@
     },
     {
       "js": [
-        "src/content/index.ts"
+        "src/content/injected/index.ts"
       ],
       "css": [
         "assets/style/injected.css"
@@ -44,7 +44,8 @@
         "https://bilibili.com/*",
         "https://www.bilibili.com/*"
       ],
-      "run_at": "document_start"
+      "run_at": "document_start",
+      "world": "MAIN"
     },
     {
       "css": [
@@ -62,6 +63,15 @@
       "matches": [
         "https://bilibili.com/*",
         "https://www.bilibili.com/*"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "js": [
+        "src/content/video.ts"
+      ],
+      "matches": [
+        "https://www.bilibili.com/video/*"
       ],
       "run_at": "document_end"
     }

@@ -1,3 +1,6 @@
-#slide_ad,.bili-dyn-ads{
+#slide_ad,
+.bili-dyn-ads,
+.strip-ad,
+.video-card-ad-small {
     display: none !important;
 }

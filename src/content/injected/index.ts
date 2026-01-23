@@ -16,12 +16,13 @@ window.fetch = async function (url: URL | RequestInfo, options) {
                         // 修改返回内容
                         const recommendResponse = await response.text()
                         const recommend = JSON.parse(recommendResponse)
-                        const recommendLst = recommend.data?.item || []
-
                         // 过滤广告内容
-                        recommend.data.item = recommendLst.filter((item: { goto: string }) => {
-                            return item.goto !== 'ad'
-                        })
+                        if (recommend.data && Array.isArray(recommend.data.item)) {
+                            const recommendLst = recommend.data.item
+                            recommend.data.item = recommendLst.filter((item: { goto: string }) => {
+                                return item.goto !== 'ad'
+                            })
+                        }
 
                         // 创建包含修改后内容的新响应对象
                         const modifiedResponse = new Response(JSON.stringify(recommend), {
