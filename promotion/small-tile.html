@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Promo Tile (Bilibili Style)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&display=swap');
+
+        @font-face {
+            font-family: 'Google Sans';
+            src: url('assets/GoogleSans-Regular.ttf') format('truetype');
+        }
+
+        :root {
+            --bili-pink: #FB7299;
+            --bili-blue: #23ADE5;
+            --bg-gray: #f6f7f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Google Sans', 'Noto Sans SC', sans-serif;
+        }
+
+        .tile-canvas {
+            width: 440px;
+            height: 280px;
+            background-color: #fff;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            /* Rounded corners like Bilibili app cards */
+        }
+
+        /* Bilibili TV Decoration */
+        .tv-antenna {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            border: 12px solid rgba(251, 114, 153, 0.1);
+            border-radius: 30px;
+            transform: rotate(15deg);
+            z-index: 0;
+        }
+
+        .tv-antenna-2 {
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            width: 200px;
+            height: 200px;
+            background: rgba(35, 173, 229, 0.08);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .content {
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+        }
+
+        /* Tag Style */
+        .tag {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--bili-pink);
+            background: rgba(251, 114, 153, 0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+
+        /* Headlines */
+        h1 {
+            font-size: 34px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: #18191C;
+        }
+
+        .highlight {
+            color: var(--bili-blue);
+            position: relative;
+        }
+
+        /* Underline decoration */
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(35, 173, 229, 0.2);
+            z-index: -1;
+            transform: skewX(-12deg);
+        }
+
+        p {
+            font-size: 14px;
+            color: #9499A0;
+            /* Bilibili secondary text color */
+            font-weight: 500;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tile-canvas">
+        <div class="tv-antenna"></div>
+        <div class="tv-antenna-2"></div>
+
+        <div class="content">
+            <div class="tag">Chrome 扩展</div>
+
+            <h1>
+                哔哩哔哩<br>
+                <span class="highlight">广告移除</span>
+            </h1>
+
+            <p>还原清爽 · 极致净化</p>
+        </div>
+    </div>
+</body>
+
+</html>

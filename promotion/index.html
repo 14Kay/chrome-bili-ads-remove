@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bilibili Ads Remover Promotion (Light)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        @font-face {
+            font-family: 'Google Sans';
+            src: url('assets/GoogleSans-Regular.ttf') format('truetype');
+        }
+
+        :root {
+            --bili-pink: #FB7299;
+            --bili-blue: #23ADE5;
+            --text-main: #18191C;
+            --text-secondary: #9499A0;
+            --bg-light: #F6F7F9;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Ambient background for the browser window (Dark to contrast the light banner) */
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            overflow: auto;
+        }
+
+        /* The actual 1280x800 Banner Canvas - Light Theme */
+        .banner-canvas {
+            width: 1280px;
+            height: 800px;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--bg-light);
+            /* Subtle grid pattern */
+            background-image:
+                linear-gradient(#E3E5E7 1px, transparent 1px),
+                linear-gradient(90deg, #E3E5E7 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--text-main);
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+            display: flex;
+        }
+
+        /* Soft Glow top right */
+        .glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(251, 114, 153, 0.08) 0%, rgba(35, 173, 229, 0.08) 50%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            z-index: 0;
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: 1;
+            padding: 80px;
+            gap: 60px;
+            align-items: center;
+        }
+
+        /* Left Content */
+        .left-panel {
+            flex: 0 0 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .badge-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .badge {
+            background: #fff;
+            border: 1px solid #E3E5E7;
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .badge.accent {
+            color: var(--bili-pink);
+            background: rgba(251, 114, 153, 0.1);
+            border-color: transparent;
+        }
+
+        h1 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 60px;
+            line-height: 1.1;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+            color: var(--text-main);
+        }
+
+        .brand-text {
+            color: var(--bili-pink);
+        }
+
+        p.subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 48px;
+            font-weight: 500;
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 450px
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--card-bg);
+            border: 1px solid #E3E5E7;
+            padding: 16px 24px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            border-color: var(--bili-blue);
+        }
+
+        .icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            background: #F1F2F3;
+            color: #18191C;
+        }
+
+        .feature-text h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .feature-text p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Right Content */
+        .right-panel {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .image-wrapper {
+            position: relative;
+            z-index: 2;
+            perspective: 1000px;
+        }
+
+        .main-image {
+            max-width: 105%;
+            /* Slightly larger */
+            max-height: 600px;
+            border-radius: 12px;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(0, 0, 0, 0.05);
+            /* Removed rotation for cleaner look, or keep slight tilt */
+            transition: transform 0.5s ease;
+            background: white;
+            /* Ensure png transparency doesn't show background */
+        }
+
+        /* Decorative Elements */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .c1 {
+            width: 200px;
+            height: 200px;
+            background: var(--bili-pink);
+            top: 15%;
+            right: 10%;
+            opacity: 0.1;
+            filter: blur(40px);
+        }
+
+        .c2 {
+            width: 150px;
+            height: 150px;
+            background: var(--bili-blue);
+            bottom: 15%;
+            right: 45%;
+            opacity: 0.15;
+            filter: blur(40px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner-canvas">
+        <div class="glow"></div>
+
+        <div class="container">
+            <!-- Left Side -->
+            <div class="left-panel">
+                <div class="badge-group">
+                    <div class="badge accent">Chrome Extension</div>
+                    <div class="badge">Open Source</div>
+                </div>
+
+                <h1><span class="brand-text">bilibili</span> Ads Remover</h1>
+
+                <p class="subtitle">
+                    还原清爽的 B 站浏览体验。<br>
+                    高效净化动态，回归纯粹内容。
+                </p>
+
+                <div class="features">
+                    <div class="feature-item">
+                        <div class="icon-box" style="background: rgba(251, 114, 153, 0.1); color: #FB7299;">⚡</div>
+                        <div class="feature-text">
+                            <h3>Main World 极速注入</h3>
+                            <p>原生环境执行，毫秒级响应，零闪烁</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="icon-box" style="background: rgba(35, 173, 229, 0.1); color: #23ADE5;">🛡️</div>
+                        <div class="feature-text">
+                            <h3>云端规则自动同步</h3>
+                            <p>实时过滤热门广告，省心更省力</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="icon-box" style="background: #FFF0E0; color: #FF9F44;">🎨</div>
+                        <div class="feature-text">
+                            <h3>现代化极简 UI</h3>
+                            <p>磨砂质感设计，完美适配深色模式</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="right-panel">
+                <div class="circle c1"></div>
+                <div class="circle c2"></div>
+
+                <div class="image-wrapper">
+                    <img src="assets/main.png" alt="App Preview" class="main-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

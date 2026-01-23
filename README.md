@@ -1,7 +1,7 @@
 # bilibili Ads Remover
 
 <div align="center">
-  <img src="assets/image/logo.png" width="128" height="128" alt="logo" />
+  <img src="assets/image/icon128.png" width="128" height="128" alt="logo" />
 
   <h1>bilibili Ads Remover</h1>
 
@@ -17,6 +17,8 @@
     <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" />
   </p>
 </div>
+
+![Banner](assets/banner-light.png)
 
 一款轻量级、高性能的 Chrome 扩展，专注于净化 Bilibili 动态页面。采用最新的 **Manifest V3** 架构与 **Main World Script** 注入技术，实现了零延迟的动态广告/推广内容拦截。
 
