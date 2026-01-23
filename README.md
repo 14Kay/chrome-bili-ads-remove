@@ -10,6 +10,9 @@
   </p>
 
   <p>
+    <a href="https://chromewebstore.google.com/detail/bilibili-ads-remover/lkbhpmkdbfpalgbckhnjlpjdoogboofb">
+      <img src="https://img.shields.io/chrome-web-store/v/lkbhpmkdbfpalgbckhnjlpjdoogboofb?style=flat-square&label=Chrome%20Web%20Store&logo=google-chrome&logoColor=white&color=23ADE5" alt="Chrome Web Store" />
+    </a>
     <a href="https://github.com/14Kay/chrome-bili-ads-remove/releases">
       <img src="https://img.shields.io/github/v/release/14Kay/chrome-bili-ads-remove?style=flat-square&color=FB7299" alt="Release" />
     </a>
@@ -33,7 +36,11 @@
 
 ## 🛠️ 安装说明
 
-### 开发者模式安装 (推荐)
+### 🛒 Chrome 应用商店安装 (推荐)
+
+直接访问 [Chrome Web Store](https://chromewebstore.google.com/detail/bilibili-ads-remover/lkbhpmkdbfpalgbckhnjlpjdoogboofb) 点击 "添加到 Chrome" 即可。
+
+### 📦 离线安装 (开发者模式)
 
 1.  下载最新 [Release](https://github.com/14Kay/chrome-bili-ads-remove/releases) 的 `zip` 包并解压。
 2.  打开 Chrome 扩展管理页面 `chrome://extensions/`。
