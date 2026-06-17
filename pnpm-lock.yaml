@@ -23,7 +23,7 @@ importers:
         version: 2.3.0
       '@tailwindcss/vite':
         specifier: ^4.0.0
-        version: 4.1.18(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0))
+        version: 4.1.18(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0))
       '@types/chrome':
         specifier: ^0.0.280
         version: 0.0.280
@@ -35,13 +35,16 @@ importers:
         version: 18.3.7(@types/react@18.3.27)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
-        version: 4.7.0(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0))
+        version: 4.7.0(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0))
       '@wxt-dev/auto-icons':
         specifier: ^1.1.1
-        version: 1.1.1(wxt@0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0))
+        version: 1.1.1(wxt@0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0)(yaml@2.9.0))
       '@wxt-dev/module-react':
         specifier: ^1.2.2
-        version: 1.2.2(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0))(wxt@0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0))
+        version: 1.2.2(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0))(wxt@0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0)(yaml@2.9.0))
+      bumpp:
+        specifier: ^11.1.0
+        version: 11.1.0
       tailwindcss:
         specifier: ^4.0.0
         version: 4.1.18
@@ -50,10 +53,10 @@ importers:
         version: 5.6.3
       vite:
         specifier: ^6.0.3
-        version: 6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)
+        version: 6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0)
       wxt:
         specifier: ^0.20.26
-        version: 0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0)
+        version: 0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0)(yaml@2.9.0)
 
 packages:
 
@@ -705,6 +708,9 @@ packages:
     resolution: {integrity: sha512-//0sR/cow/s4ICQaYoAobOl4aU8cjU6x/V24V7XkKotb9+O+3zySIYp146vpaobYHnxa4pZX8NkV54Z5AwbDKA==}
     engines: {node: '>=12'}
 
+  '@quansync/fs@1.0.0':
+    resolution: {integrity: sha512-4TJ3DFtlf1L5LDMaM6CanJ/0lckGNtJcMjQ1NAV6zDmA0tEHKZtxNKin8EgPaVX1YzljbxckyT2tJrpQKAtngQ==}
+
   '@rolldown/binding-android-arm64@1.0.3':
     resolution: {integrity: sha512-454rs7jHngixp/NMxd5srYD57OnzSlZ/eFTETjORQHLwJG1lRtmNOJcBerZlfu4GjKqeq8aCCIQrMdHyhI51Hw==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -1150,6 +1156,9 @@ packages:
     resolution: {integrity: sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg==}
     engines: {node: '>=12'}
 
+  args-tokenizer@0.3.0:
+    resolution: {integrity: sha512-xXAd7G2Mll5W8uo37GETpQ2VrE84M181Z7ugHFGQnJZ50M2mbOv0osSZ9VsSgPfJQ+LVG0prSi0th+ELMsno7Q==}
+
   array-differ@4.0.0:
     resolution: {integrity: sha512-Q6VPTLMsmXZ47ENG3V+wQyZS1ZxXMxFyYzA+Z/GMrJ6yIutAIEf9wTyroTzmGjNfox9/h3GdGBCVh43GVFx4Uw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
@@ -1205,6 +1214,11 @@ packages:
 
   buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
+
+  bumpp@11.1.0:
+    resolution: {integrity: sha512-jdwOGMyX8JIqpQ0N2RMRR87DHZaoJnUtui5lU9LqFfFK5JC0H8qY9uWqXoa+dEWt/K7rOmmsoyiZB8RBM7RPBQ==}
+    engines: {node: '>=20.19.0'}
+    hasBin: true
 
   bundle-name@4.1.0:
     resolution: {integrity: sha512-tjwM5exMg6BGRI+kNmTntNsvdZS1X8BFYS6tnJ2hdH0kVxM6/eVZ2xy+FqStSWvYmtfFMDLIxurorHwDKfDz5Q==}
@@ -1762,6 +1776,9 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
+  jsonc-parser@3.3.1:
+    resolution: {integrity: sha512-HUgH65KyejrUFPvHFPbqOY0rsFip3Bo5wb4ngvdi1EpCYWUQDC5V+Y7mZws+DLkr4M//zQJoanu1SP+87Dv1oQ==}
+
   jsonfile@6.2.0:
     resolution: {integrity: sha512-FGuPw30AdOIUTRMC2OMRtQV+jkVj2cfPqSeWXv1NEAJ1qZ5zb1X6z1mFhbfOB/iy3ssJCD+3KuZ8r8C3uVFlAg==}
 
@@ -2123,6 +2140,9 @@ packages:
     resolution: {integrity: sha512-ua1L4OgXSBdsu1FPb7F3tYH0F48a6kxvod4pLUlGY9COeJAJQNX/sNH2IiEmsxw7lqYiAwrdHMjz1FctOsyDQg==}
     engines: {node: '>=18'}
 
+  package-manager-detector@1.6.0:
+    resolution: {integrity: sha512-61A5ThoTiDG/C8s8UMZwSorAGwMJ0ERVGj2OjoW5pAalsNOg15+iQiPzrLJ4jhZ1HJzmC2PIHT2oEiH3R5fzNA==}
+
   pako@1.0.11:
     resolution: {integrity: sha512-4hLB8Py4zZce5s4yd9XzopqwVv/yGNhV1Bl8NTmCq1763HeK2+EwVTv+leGeL13Dnh2wfbqowVPXCIO0z4taYw==}
 
@@ -2216,6 +2236,9 @@ packages:
 
   quansync@0.2.11:
     resolution: {integrity: sha512-AifT7QEbW9Nri4tAwR5M/uzpBuqfZf+zwaEM/QkzEjj7NBuFD2rBuy0K3dE+8wltbezDV7JMA0WfnCPYRSYbXA==}
+
+  quansync@1.0.0:
+    resolution: {integrity: sha512-5xZacEEufv3HSTPQuchrvV6soaiACMFnq1H8wkVioctoH3TRha9Sz66lOxRwPK/qZj7HPiSveih9yAyh98gvqA==}
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -2500,6 +2523,12 @@ packages:
   uhyphen@0.2.0:
     resolution: {integrity: sha512-qz3o9CHXmJJPGBdqzab7qAYuW8kQGKNEuoHFYrBwV6hWIMcpAmxDLXojcHfFr9US1Pe6zUswEIJIbLI610fuqA==}
 
+  unconfig-core@7.5.0:
+    resolution: {integrity: sha512-Su3FauozOGP44ZmKdHy2oE6LPjk51M/TRRjHv2HNCWiDvfvCoxC2lno6jevMA91MYAdCdwP05QnWdWpSbncX/w==}
+
+  unconfig@7.5.0:
+    resolution: {integrity: sha512-oi8Qy2JV4D3UQ0PsopR28CzdQ3S/5A1zwsUwp/rosSbfhJ5z7b90bIyTwi/F7hCLD4SGcZVjDzd4XoUQcEanvA==}
+
   undici-types@7.24.6:
     resolution: {integrity: sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==}
 
@@ -2722,6 +2751,11 @@ packages:
 
   yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
+
+  yaml@2.9.0:
+    resolution: {integrity: sha512-2AvhNX3mb8zd6Zy7INTtSpl1F15HW6Wnqj0srWlkKLcpYl/gMIMJiyuGq2KeI2YFxUPjdlB+3Lc10seMLtL4cA==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
 
   yargs-parser@21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
@@ -3237,6 +3271,10 @@ snapshots:
       '@pnpm/network.ca-file': 1.0.2
       config-chain: 1.1.13
 
+  '@quansync/fs@1.0.0':
+    dependencies:
+      quansync: 1.0.0
+
   '@rolldown/binding-android-arm64@1.0.3':
     optional: true
 
@@ -3431,12 +3469,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.18
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.18
 
-  '@tailwindcss/vite@4.1.18(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0))':
+  '@tailwindcss/vite@4.1.18(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0))':
     dependencies:
       '@tailwindcss/node': 4.1.18
       '@tailwindcss/oxide': 4.1.18
       tailwindcss: 4.1.18
-      vite: 6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)
+      vite: 6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0)
 
   '@tybys/wasm-util@0.10.2':
     dependencies:
@@ -3498,7 +3536,7 @@ snapshots:
 
   '@types/webextension-polyfill@0.12.5': {}
 
-  '@vitejs/plugin-react@4.7.0(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0))':
+  '@vitejs/plugin-react@4.7.0(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0))':
     dependencies:
       '@babel/core': 7.28.6
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.28.6)
@@ -3506,7 +3544,7 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-beta.27
       '@types/babel__core': 7.20.5
       react-refresh: 0.17.0
-      vite: 6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)
+      vite: 6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -3523,23 +3561,23 @@ snapshots:
 
   '@webext-core/match-patterns@1.0.3': {}
 
-  '@wxt-dev/auto-icons@1.1.1(wxt@0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0))':
+  '@wxt-dev/auto-icons@1.1.1(wxt@0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0)(yaml@2.9.0))':
     dependencies:
       defu: 6.1.7
       fs-extra: 11.3.5
       sharp: 0.34.5
-      wxt: 0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0)
+      wxt: 0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0)(yaml@2.9.0)
 
   '@wxt-dev/browser@0.1.43':
     dependencies:
       '@types/filesystem': 0.0.36
       '@types/har-format': 1.2.16
 
-  '@wxt-dev/module-react@1.2.2(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0))(wxt@0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0))':
+  '@wxt-dev/module-react@1.2.2(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0))(wxt@0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0)(yaml@2.9.0))':
     dependencies:
-      '@vitejs/plugin-react': 4.7.0(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0))
-      vite: 6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)
-      wxt: 0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0)
+      '@vitejs/plugin-react': 4.7.0(vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0))
+      vite: 6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0)
+      wxt: 0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -3576,6 +3614,8 @@ snapshots:
       color-convert: 2.0.1
 
   ansi-styles@6.2.3: {}
+
+  args-tokenizer@0.3.0: {}
 
   array-differ@4.0.0: {}
 
@@ -3633,6 +3673,18 @@ snapshots:
   buffer-equal-constant-time@1.0.1: {}
 
   buffer-from@1.1.2: {}
+
+  bumpp@11.1.0:
+    dependencies:
+      args-tokenizer: 0.3.0
+      cac: 7.0.0
+      jsonc-parser: 3.3.1
+      package-manager-detector: 1.6.0
+      semver: 7.8.4
+      tinyexec: 1.2.4
+      tinyglobby: 0.2.17
+      unconfig: 7.5.0
+      yaml: 2.9.0
 
   bundle-name@4.1.0:
     dependencies:
@@ -4154,6 +4206,8 @@ snapshots:
 
   json5@2.2.3: {}
 
+  jsonc-parser@3.3.1: {}
+
   jsonfile@6.2.0:
     dependencies:
       universalify: 2.0.1
@@ -4492,6 +4546,8 @@ snapshots:
       registry-url: 6.0.1
       semver: 7.8.4
 
+  package-manager-detector@1.6.0: {}
+
   pako@1.0.11: {}
 
   parse-json@7.1.1:
@@ -4605,6 +4661,8 @@ snapshots:
       escape-goat: 4.0.0
 
   quansync@0.2.11: {}
+
+  quansync@1.0.0: {}
 
   queue-microtask@1.2.3: {}
 
@@ -4924,6 +4982,19 @@ snapshots:
 
   uhyphen@0.2.0: {}
 
+  unconfig-core@7.5.0:
+    dependencies:
+      '@quansync/fs': 1.0.0
+      quansync: 1.0.0
+
+  unconfig@7.5.0:
+    dependencies:
+      '@quansync/fs': 1.0.0
+      defu: 6.1.7
+      jiti: 2.6.1
+      quansync: 1.0.0
+      unconfig-core: 7.5.0
+
   undici-types@7.24.6: {}
 
   undici@7.19.0: {}
@@ -4983,13 +5054,13 @@ snapshots:
 
   uuid@8.3.2: {}
 
-  vite-node@6.0.0(@types/node@25.9.3)(esbuild@0.27.7)(jiti@2.6.1):
+  vite-node@6.0.0(@types/node@25.9.3)(esbuild@0.27.7)(jiti@2.6.1)(yaml@2.9.0):
     dependencies:
       cac: 7.0.0
       es-module-lexer: 2.1.0
       obug: 2.1.3
       pathe: 2.0.3
-      vite: 8.0.16(@types/node@25.9.3)(esbuild@0.27.7)(jiti@2.6.1)
+      vite: 8.0.16(@types/node@25.9.3)(esbuild@0.27.7)(jiti@2.6.1)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@types/node'
       - '@vitejs/devtools'
@@ -5004,7 +5075,7 @@ snapshots:
       - tsx
       - yaml
 
-  vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0):
+  vite@6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.3)
@@ -5017,8 +5088,9 @@ snapshots:
       fsevents: 2.3.3
       jiti: 2.6.1
       lightningcss: 1.32.0
+      yaml: 2.9.0
 
-  vite@8.0.16(@types/node@25.9.3)(esbuild@0.27.7)(jiti@2.6.1):
+  vite@8.0.16(@types/node@25.9.3)(esbuild@0.27.7)(jiti@2.6.1)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
@@ -5030,6 +5102,7 @@ snapshots:
       esbuild: 0.27.7
       fsevents: 2.3.3
       jiti: 2.6.1
+      yaml: 2.9.0
 
   watchpack@2.4.4:
     dependencies:
@@ -5111,7 +5184,7 @@ snapshots:
       is-wsl: 3.1.1
       powershell-utils: 0.1.0
 
-  wxt@0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0):
+  wxt@0.20.26(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(rolldown@1.0.3)(rollup@4.56.0)(yaml@2.9.0):
     dependencies:
       '@1natsu/wait-element': 4.2.0
       '@aklinker1/rollup-plugin-visualizer': 5.12.0(rollup@4.56.0)
@@ -5152,8 +5225,8 @@ snapshots:
       scule: 1.3.0
       tinyglobby: 0.2.15
       unimport: 6.3.0(rolldown@1.0.3)
-      vite: 6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)
-      vite-node: 6.0.0(@types/node@25.9.3)(esbuild@0.27.7)(jiti@2.6.1)
+      vite: 6.4.1(@types/node@25.9.3)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.9.0)
+      vite-node: 6.0.0(@types/node@25.9.3)(esbuild@0.27.7)(jiti@2.6.1)(yaml@2.9.0)
       web-ext-run: 0.2.4
     transitivePeerDependencies:
       - '@types/node'
@@ -5186,6 +5259,8 @@ snapshots:
   y18n@5.0.8: {}
 
   yallist@3.1.1: {}
+
+  yaml@2.9.0: {}
 
   yargs-parser@21.1.1: {}
 
