@@ -1,7 +1,7 @@
 # bilibili Ads Remover
 
 <div align="center">
-  <img src="assets/image/icon128.png" width="128" height="128" alt="logo" />
+  <img src="src/assets/icon.png" width="128" height="128" alt="logo" />
 
   <h1>bilibili Ads Remover</h1>
 
@@ -25,7 +25,12 @@
 
 一款轻量级、高性能的 Chrome 扩展，专注于净化 Bilibili 动态页面。采用最新的 **Manifest V3** 架构与 **Main World Script** 注入技术，实现了零延迟的动态广告/推广内容拦截。
 
-## ✨ 核心特性 (v2.0)
+## 开发文档
+
+- **[AGENT.md](./AGENT.md)** - AI 开发工具技术文档
+- **[DESIGN.md](./DESIGN.md)** - 设计系统规范
+
+## ✨ 核心特性 (v3.0)
 
 -   🚀 **极速拦截**: 采用 Main World 注入技术，在页面加载极早期介入，拦截成功率 100%。
 -   🎨 **全新 UI**: 现代化极简设计，磨砂质感，完美适配深色模式 (Dark Mode)。
@@ -90,11 +95,30 @@ pnpm build
 
 ## 📝 更新日志
 
-### v2.0.0 (Major Update)
+### v3.0.0 (Latest)
+-   **架构重构**: 全面迁移到 WXT 框架，开发体验大幅提升。
+-   **代码优化**: 重新组织目录结构，模块化更清晰。
+-   **性能提升**: 优化拦截逻辑，降低资源占用。
+
+### v2.0.0
 -   **UI 重构**: 全新设计的 Popup 界面，更精致的交互体验。
 -   **核心重构**: 迁移至 Main World Script，解决竞态问题，拦截更稳定。
 -   **性能优化**: 引入 Promise 锁机制，确保规则加载无延迟。
--   **功能增强**: 用户规则与云端规则彻底分离，新增实时同步状态显示。
+
+## 🤝 开发
+
+参考 [AGENT.md](./AGENT.md) 获取完整的技术文档和开发指南。
+
+```bash
+# 安装依赖
+pnpm install
+
+# 开发模式
+pnpm dev
+
+# 构建生产版本
+pnpm build
+```
 
 ## 🤝 贡献
 

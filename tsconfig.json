@@ -26,15 +26,20 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "src/*"
+        "./src/*"
       ]
     },
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    /* Types */
+    "types": ["@types/chrome"]
   },
   "include": [
-    "src"
+    "**/*"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
+    ".wxt",
+    ".output"
   ]
 }

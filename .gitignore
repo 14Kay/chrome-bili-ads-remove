@@ -1,2 +1,7 @@
 dist/
 node_modules/
+.wxt/
+.output/
+promotion/
+*.log
+*.tsbuildinfo
